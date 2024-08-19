@@ -7,5 +7,5 @@ elementary:
       user: dbt_user
       password: dbt_password
       port: 5432
-      dbname: elementary_demo
+      dbname: demo_0819
       schema: public
