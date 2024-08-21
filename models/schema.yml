@@ -9,7 +9,7 @@ models:
     tests:
       - elementary.volume_anomalies:
           config:
-            severity: warning
+            severity: warn
           tags: [ "column_test" ]
           anomaly_sensitivity: 1
 
