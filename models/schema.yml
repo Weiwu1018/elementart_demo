@@ -5,13 +5,15 @@ models:
     description: This table has basic information about a customer
     config:
       tags: [ "PII" ]
-
-    tests:
-      - elementary.volume_anomalies:
-          config:
-            severity: warn
-          tags: [ "column_test" ]
-          anomaly_sensitivity: 1
+    columns:
+      - name: birth
+        description: This is a unique identifier for a customer
+        tests:
+          - elementary.volume_anomalies:
+              config:
+                severity: warn
+              tags: [ "column_test" ]
+              anomaly_sensitivity: 1
 
   - name: test4_column_anomaly
     description: This table has basic information about a customer, as well as some derived facts based on a customer's orders
