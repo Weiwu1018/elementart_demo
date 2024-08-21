@@ -7,7 +7,7 @@ with orders as (
 final as (
 
     select
-    age
+    *
     from orders
 )
 
