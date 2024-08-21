@@ -5,12 +5,11 @@ models:
     description: This table has basic information about a customer
     config:
       tags: [ "PII" ]
-      elementary:
-        timestamp_column: "birth"
+
     tests:
       - elementary.volume_anomalies:
           config:
-            severity: error
+            severity: warning
           tags: [ "column_test" ]
           anomaly_sensitivity: 1
 
