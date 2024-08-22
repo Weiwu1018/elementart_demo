@@ -61,27 +61,27 @@ models:
       elementary:
         timestamp_column: "signup_date"
     tests:
-      - elementary.volume_anomalies:
+      - elementary.all_columns_anomalies:
           config:
             severity: warn
-          tags: [ "volume_anomalies" ]
+          tags: [ "column_anomalies" ]
           anomaly_sensitivity: 1
 
     columns:
-      - name: customer_id
-        description: This is a unique identifier for a customer
-
-      - name: first_name
-        description: Customer's first name. PII.
-
-      - name: last_name
-        description: Customer's last name. PII.
-
-      - name: first_order
-        description: Date (UTC) of a customer's first order
-
-      - name: most_recent_order
-        description: Date (UTC) of a customer's most recent order
+#      - name: customer_id
+#        description: This is a unique identifier for a customer
+#
+#      - name: first_name
+#        description: Customer's first name. PII.
+#
+#      - name: last_name
+#        description: Customer's last name. PII.
+#
+#      - name: first_order
+#        description: Date (UTC) of a customer's first order
+#
+#      - name: most_recent_order
+#        description: Date (UTC) of a customer's most recent order
 
       - name: number_of_orders
         description: Count of the number of orders a customer has placed
@@ -111,9 +111,11 @@ models:
         timestamp_column: "order_date"
 
     tests:
-      - elementary.dimension_anomalies:
-          dimensions:
-            - status
+      - elementary.all_columns_anomalies:
+          config:
+            severity: warn
+          tags: [ "column_anomalies" ]
+          anomaly_sensitivity: 1
     columns:
       - name: order_id
         description: This is a unique identifier for an order
